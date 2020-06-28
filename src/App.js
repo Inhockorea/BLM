@@ -5,7 +5,7 @@ import data from './data';
 import { CSSTransition } from "react-transition-group";
 
 function App() {
-  const [appearHome, setappearHome] = useState(true);
+  const [korean, setKorean] = useState(false);
   const [property, setProperties] = useState(data.properties[0]);
 
   let newIndex;
@@ -19,23 +19,44 @@ function App() {
     newIndex = property.index - 1;
     setProperties(data.properties[newIndex]);
   }
-
+  
+  const toggleLanguage = () => {
+    setKorean(!korean);
+  }
 
   return (
     <div className="App">
+      <div className="toggleContainer">
+
+        <div className="ENG">ENG</div>
+
+        <div className="toggle">
+          <label className="switch">
+            <input type="checkbox" onClick={toggleLanguage} />
+            <span className="slider round"></span>
+          </label>
+        </div>
+
+        <div className="KR">KR</div>
+
+      </div>
+
+
       <div>
         <CSSTransition
-          in={appearHome}
+          in={true}
           appear={true}
           timeout={1000}
           classNames="fade"
         >
-          <Home property={property} />
+          <Home property={property} korean={korean} />
         </CSSTransition>
       </div>
 
-      <button  className="prev" onClick={prevProperty} disabled={property.index === 0}> &#8592; </button>
-      <button  className="next" onClick={nextProperty} disabled={property.index === data.properties.length - 1}> &#8594; </button>
+
+      <button className="prev" onClick={prevProperty} disabled={property.index === 0}> &#8592; </button>
+      <button className="next" onClick={nextProperty} disabled={property.index === data.properties.length - 1}> &#8594; </button>
+
     </div>
   );
 }

@@ -1,12 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Yeon+Sung&display=swap');
 
 body {
   background-color:black;
-  font-family: 'Cormorant Garamond', serif;
 }
-
-
 
 /* DEMO STYLES */
 button {
@@ -14,32 +12,25 @@ button {
   font-size: 20px;
   font-weight: bold;
   background-color: black;
-  border: none;
-  color:goldenrod;
+  color:#CE2938;
+  outline:none;
+  cursor: pointer;
 }
 
-button:{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: black;
-  border: none;
-  color:goldenrod;
-  text-decoration: none;
-}
 .next {
   position: absolute;
   bottom:20px;
   margin-right: 20px;
   right:30px;
+  border: none;
 }
 
-.prev {
+.prev{
   position: absolute;
   bottom:20px;
   left:30px;
+  border: none;
 }
-
 
 /* appear - on page load */
 .fade-appear {
@@ -58,7 +49,7 @@ button:{
 }
 .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 5000ms linear 5000ms;
+    transition: opacity 2000ms linear 2000ms;
 }
 
 /* exit */
@@ -67,7 +58,7 @@ button:{
 }
 .fade-exit.fade-exit-active {
     opacity: 0;
-    transition: opacity 5000ms linear;
+    transition: opacity 2000ms linear;
 }
 .fade-exit-done {
   opacity: 0;
@@ -82,73 +73,69 @@ button:{
 .slide-enter.slide-enter-active {
     opacity: 1;
     transform: scale(1) translateY(0);
-    transition: opacity 3000ms linear 1000ms, transform 3000ms ease-in-out 1000ms;
+    transition: opacity 2000ms linear 1000ms, transform 2000ms ease-in-out 1000ms;
 }
 
 /* slide exit */
 .slide-exit {
     opacity: 1;
     transform: scale(1) translateY(0);
-    
 }
 .slide-exit.slide-exit-active {
     opacity: 0;
     transform: scale(0.97) translateY(5px);
-    transition: opacity 1500ms linear, transform 1500ms ease-out;
+    transition: opacity 1000ms linear, transform 1000ms ease-out;
 }
 .slide-exit-done {
   opacity: 0;
 }
 
-/* Card */
-.card-container {
-  position: relative;
-  max-width: 226px;
-  margin: 0 auto;
-}
-
-
-
-.card {
-  border: 3px #f3f3f3 solid;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s linear;
-  cursor: pointer;
-  background-color: #f3f3f3;
-  padding: 10px;
-  max-width: 220px;
-  text-align: left;
-  margin: 0 auto;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.card:hover {
-  background-color: #f3f3f3;
-  border-color: #f3f3f3;
-}
-.card img {
-  max-width: calc(100%);
-  margin: 0 auto;
-  display: block;
-}
 
 /* Message */
 .card-container {
-
+  font-family: 'Cormorant Garamond', serif;
   position: relative;
   max-width: 80%;
   margin: 0 auto;
 }
 
+.kcard-container {
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
 
+  font-family: 'Nanum Brush Script', cursive;
+  font-family: 'Yeon Sung', cursive;
+}
+
+.mlk {
+  margin-top: 40px;
+  font-weight: 300;
+  font-size: 25px;
+  text-align: right;
+}
+
+.image {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25vh;
+}
+
+.image img {
+  height: 350px;
+  width: 500px;
+  border-radius: 4px;
+}
+
+.taeguek {
+  width:180px;
+}
 
 .message {
   font-size: 50px;
   color:white;
-  /* border: 3px #f3f3f3 solid; */
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   transition: all 0.3s linear;
   cursor: pointer;
@@ -157,10 +144,168 @@ button:{
   max-width: 80%;
   text-align: center;
   margin: 0 auto;
-  vertical-align: center;
 
   position: absolute;
-  top: 0;
+  top: calc(50vh - 100px);
   left: 0;
   right: 0;
 }
+
+
+
+/* The switch - the box around the slider */
+
+
+.switch {
+  display: inline-block;
+  width: 45px;
+  height: 23px;
+}
+
+.toggle{
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  font-size: 14px;
+}
+
+.ENG{
+  position: absolute;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  right: 100px;
+  top: 36px;
+  font-weight: bold;
+  color: white;
+}
+
+
+.KR{
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  right: 29px;
+  top: 34px;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#CE2938;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch:active {
+  outline: none;
+}
+
+input:checked + .slider {
+  background-color:#0045A1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/**For Iphone */
+
+@media (max-width: 400.98px) { 
+
+  .message {
+    font-size: 8vw;
+    color:white;
+    /* border: 3px #f3f3f3 solid; */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+    padding: 10px;
+    max-width: 80%;
+    text-align: left;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+  }
+
+  strong{
+    font-size: 10vw;
+  }
+
+  .image img{
+    padding-top: 50px;
+    width: 350px;
+    height: 250px;
+  }
+
+  .mlk {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 5vw;
+    text-align: right;
+  }
+
+  .taeguek {
+    width:50px;
+  }
+
+  .blm{
+    font-size:15vw;
+  }
+
+  .blmk{
+    font-size:7.5vw;
+  }
+
+  .kfinal{
+    font-size:11vw;
+  }
+
+ }

@@ -5,7 +5,7 @@ import img2 from "./img/2.jpg"
 import img4 from "./img/4.jpg"
 import taegeuk from "./img/taegeuk.png"
 
-const Card = ({ property }) => {
+const KCard = ({ property }) => {
   const { index } = property;
 
 
@@ -13,12 +13,9 @@ const Card = ({ property }) => {
     return (
       <div id={`card-${index}`} className="message">
         <div>
-          <strong>
-            I can't breathe
-          </strong>
+          숨을 쉴 수 없다
         </div>
       </div>
-
     )
   }
 
@@ -26,10 +23,7 @@ const Card = ({ property }) => {
     return (
       <div id={`card-${index}`} className="message">
         <div>
-          <strong> Our lives </strong> begin to end the day
-        </div>
-        <div>
-          we become <strong> silent </strong> about things that matter
+          우리가 중대한 일에 대해 <strong>침묵</strong>하는 순간 우리의 삶은 <strong>종말</strong>을 고하기 시작한다.
         </div>
       </div>
 
@@ -40,14 +34,8 @@ const Card = ({ property }) => {
     return (
       <div id={`card-${index}`} className="message">
         <div>
-        In the end,
+          결국, 우리는 <strong>적의 말</strong>보다 <strong>동지의 침묵</strong>을 기억할 것이다
         </div>
-        <div>
-          we will remember not the <strong>words of our enemies</strong>,
-        </div>
-        <div>
-          but the <strong>silence of our friends</strong>.
-          </div>
       </div>
     )
   }
@@ -81,24 +69,25 @@ const Card = ({ property }) => {
 
   if (index === 6) {
     return (
-        <div id={`card-${index}`} className="message">
-          <strong>Injustice</strong> anywhere is a threat to <strong>justice</strong> everywhere
-          <div className="mlk">
-            - Martin Luther King Jr
-          </div>
+      <div id={`card-${index}`} className="message">
+        어디서 발생하든 <strong>불의</strong>는 세상 모든 곳의 <strong>정의</strong>를 위협한다
+        <div className="mlk">
+            - 마틴 루터 킹 주니어
         </div>
+
+      </div>
+
     )
   }
 
   if (index === 7) {
     return (
       <div style={{ "display": "flex", "alignItems": 'center' }}>
-        <div id={`card-${index}`} style={{ "zIndex": 1, "paddingTop": "60px" }} className="message" >
-          <strong>South Korea</strong> stands in <strong>solidarity</strong> with the <strong>Black Community</strong>.
-
+        <div id={`card-${index}`} style={{ "zIndex": 1, "paddingTop": "60px" }} className="message kfinal" >
+          한국도 같이 함께 하겠습니다.
         </div>
         <div id={`card-${index}`} style={{ "zIndex": 0 }} className="message">
-          <img src={taegeuk} className="taeguek" alt="img2"></img>
+          <img src={taegeuk} className ="taeguek" alt="img2"></img>
         </div>
       </div>
 
@@ -107,16 +96,17 @@ const Card = ({ property }) => {
 
   if (index === 8) {
     return (
-      <div id={`card-${index}`} className="message blm">
-        Black Lives Matter
+      <div id={`card-${index}`} className="message blmk">
+        흑인의 생명은 소중합니다.
       </div>
     )
   }
 
+
 }
 
-Card.propTypes = {
+KCard.propTypes = {
   property: PropTypes.object.isRequired
 }
 
-export default Card;
+export default KCard;
