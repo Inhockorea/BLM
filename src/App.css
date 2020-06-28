@@ -254,7 +254,7 @@ input:checked + .slider:before {
 
 /**For Iphone */
 
-@media (max-width: 400.98px) { 
+@media only screen and (max-width: 450px){ 
 
   .message {
     font-size: 8vw;
